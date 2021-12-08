@@ -1,0 +1,47 @@
+{
+  "name": "vaclavvanik/soap-http",
+  "description": "Binding SOAP messages to PSR-7 HTTP messages",
+  "license": "MIT",
+  "type": "library",
+  "homepage": "https://github.com/vaclavvanik/soap-http",
+  "keywords": [
+    "soap",
+    "wsdl",
+    "request",
+    "response"
+  ],
+  "authors": [
+    {
+      "name": "Václav Vaník",
+      "email": "vaclav.vanik@gmail.com"
+    }
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "require": {
+    "php": "^7.3 || ^8.0",
+    "ext-soap": "*",
+    "psr/http-factory": "^1.0.1",
+    "psr/http-message": "^1.0.0",
+    "vaclavvanik/soap-interpreter": "^0.2.0"
+  },
+  "require-dev": {
+
+  },
+  "autoload": {
+    "psr-4": {
+      "VaclavVanik\\Soap\\Http\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "VaclavVanikTest\\Soap\\Http\\": "test/unit"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "0.1.x-dev"
+    }
+  }
+}
