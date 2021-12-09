@@ -13,14 +13,14 @@ use SoapHeader;
 use Throwable;
 use VaclavVanik\Soap\Binding\Exception\SoapFault;
 use VaclavVanik\Soap\Binding\Exception\ValueError;
-use VaclavVanik\Soap\Binding\InterpreterHttpBinding;
+use VaclavVanik\Soap\Binding\InterpreterBinding;
 use VaclavVanik\Soap\Binding\Request;
 use VaclavVanik\Soap\Binding\RequestFactory;
 use VaclavVanik\Soap\Interpreter;
 
 use const SOAP_1_1;
 
-final class InterpreterHttpBindingTest extends TestCase
+final class InterpreterBindingTest extends TestCase
 {
     use ProphecyTrait;
 
@@ -55,7 +55,7 @@ final class InterpreterHttpBindingTest extends TestCase
             }
         };
 
-        $binding = new InterpreterHttpBinding($interpreter, $requestFactory);
+        $binding = new InterpreterBinding($interpreter, $requestFactory);
         $httpBindingRequest = $binding->request($operation, $parameters, $soapHeaders);
 
         $this->assertSame($psrRequest, $httpBindingRequest);
@@ -79,14 +79,14 @@ final class InterpreterHttpBindingTest extends TestCase
         $interpreter->response($operation, $body)->willReturn($interpreterResponse);
         $interpreter = $interpreter->reveal();
 
-        $binding = new InterpreterHttpBinding($interpreter, $requestFactory);
+        $binding = new InterpreterBinding($interpreter, $requestFactory);
         $response = $binding->response($operation, $psrResponse);
 
         $this->assertSame($interpreterResponse->getResult(), $response->getResult());
         $this->assertSame($interpreterResponse->getHeaders(), $response->getHeaders());
     }
 
-    /** @return iterable<string, array{InterpreterHttpBinding, string, string}> */
+    /** @return iterable<string, array{InterpreterBinding, string, string}> */
     public function provideRequestException(): iterable
     {
         $operation = 'sayHello';
@@ -110,13 +110,13 @@ final class InterpreterHttpBindingTest extends TestCase
         $requestFactory = $this->prophesizeRequestFactory()->reveal();
 
         yield SoapFault::class => [
-            new InterpreterHttpBinding($soapFaultInterpreter, $requestFactory),
+            new InterpreterBinding($soapFaultInterpreter, $requestFactory),
             $operation,
             SoapFault::class,
         ];
 
         yield ValueError::class => [
-            new InterpreterHttpBinding($valueErrorInterpreter, $requestFactory),
+            new InterpreterBinding($valueErrorInterpreter, $requestFactory),
             $operation,
             ValueError::class,
         ];
@@ -124,7 +124,7 @@ final class InterpreterHttpBindingTest extends TestCase
 
     /** @dataProvider provideRequestException */
     public function testRequestCatchInterpreterException(
-        InterpreterHttpBinding $httpBinding,
+        InterpreterBinding $httpBinding,
         string $operation,
         string $exception
     ): void {
@@ -133,7 +133,7 @@ final class InterpreterHttpBindingTest extends TestCase
         $httpBinding->request($operation);
     }
 
-    /** @return iterable<string, array{InterpreterHttpBinding, ResponseInterface, string, string}> */
+    /** @return iterable<string, array{InterpreterBinding, ResponseInterface, string, string}> */
     public function provideResponseException(): iterable
     {
         $operation = 'sayHello';
@@ -164,14 +164,14 @@ final class InterpreterHttpBindingTest extends TestCase
         $requestFactory = $this->prophesizeRequestFactory()->reveal();
 
         yield SoapFault::class => [
-            new InterpreterHttpBinding($soapFaultInterpreter, $requestFactory),
+            new InterpreterBinding($soapFaultInterpreter, $requestFactory),
             $operation,
             $response,
             SoapFault::class,
         ];
 
         yield ValueError::class => [
-            new InterpreterHttpBinding($valueErrorInterpreter, $requestFactory),
+            new InterpreterBinding($valueErrorInterpreter, $requestFactory),
             $operation,
             $response,
             ValueError::class,
@@ -180,7 +180,7 @@ final class InterpreterHttpBindingTest extends TestCase
 
     /** @dataProvider provideResponseException */
     public function testResponseCatchInterpreterException(
-        InterpreterHttpBinding $httpBinding,
+        InterpreterBinding $httpBinding,
         string $operation,
         ResponseInterface $response,
         string $exception

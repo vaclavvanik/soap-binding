@@ -7,7 +7,7 @@ namespace VaclavVanik\Soap\Binding;
 use Psr\Http\Message;
 use VaclavVanik\Soap\Interpreter;
 
-final class InterpreterHttpBinding implements HttpBinding
+final class InterpreterBinding implements Binding
 {
     /** @var Interpreter\Interpreter */
     private $interpreter;
