@@ -7,7 +7,7 @@ namespace VaclavVanik\Soap\Binding;
 use Psr\Http\Message;
 use SoapHeader;
 
-interface HttpBinding
+interface Binding
 {
     /**
      * @param array<mixed, mixed>    $parameters
