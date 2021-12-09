@@ -1,4 +1,4 @@
-# Soap Http
+# Soap Binding
 
 This package provides binding SOAP messages to PSR-7 HTTP messages.
 The main purpose of this library is to use it together with [PSR-18 HTTP Client](https://www.php-fig.org/psr/psr-18/).
@@ -8,19 +8,19 @@ The main purpose of this library is to use it together with [PSR-18 HTTP Client]
 You can install this package via composer. 
 
 ``` bash
-composer require vaclavvanik/soap-http
+composer require vaclavvanik/soap-binding
 ```
 
 This package needs [PSR-17 HTTP Factories](https://www.php-fig.org/psr/psr-17/) implementation.
 You can use e.g. [Laminas Diactoros](https://github.com/laminas/laminas-diactoros).
 
 ``` bash
-composer require vaclavvanik/soap-http laminas/laminas-diactoros
+composer require vaclavvanik/soap-binding laminas/laminas-diactoros
 ```
 
 ## Usage
 
-[HttpBinding::request()](src/HttpBinding.php) embeds SOAP request messages into PSR-7 HTTP requests.
+[Binding::request()](src/Binding.php) embeds SOAP request messages into PSR-7 HTTP requests.
 
 ```php
 <?php
@@ -30,14 +30,14 @@ declare(strict_types=1);
 use Laminas\Diactoros\RequestFactory;
 use Laminas\Diactoros\Request\Serializer;
 use Laminas\Diactoros\StreamFactory;
-use VaclavVanik\Soap\Binding\InterpreterHttpBinding;
+use VaclavVanik\Soap\Binding\InterpreterBinding;
 use VaclavVanik\Soap\Binding\PsrRequestFactory;
 use VaclavVanik\Soap\Interpreter\PhpInterpreter;
 
 $factory = new PsrRequestFactory(new RequestFactory(), new StreamFactory());
 $interpreter = PhpInterpreter::fromWsdl('http://www.dneonline.com/calculator.asmx?wsdl');
 
-$httpBinding = new InterpreterHttpBinding($interpreter, $factory);
+$httpBinding = new InterpreterBinding($interpreter, $factory);
 $psrRequest = $httpBinding->request('Add', ['Add' => ['intA' => 1, 'intB' => 3]]);
 
 echo Serializer::toString($psrRequest);
@@ -62,7 +62,7 @@ Host: www.dneonline.com
 </SOAP-ENV:Envelope>
 ```
 
-[HttpBinding::response()](src/HttpBinding.php) embeds PSR-7 HTTP response into SOAP response object.
+[Binding::response()](src/Binding.php) embeds PSR-7 HTTP response into SOAP response object.
 
 Send `$psrRequest` created above with any PSR HTTP Client and get SOAP response.
 
