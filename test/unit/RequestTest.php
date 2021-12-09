@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace VaclavVanikTest\Soap\Http;
+namespace VaclavVanikTest\Soap\Binding;
 
 use PHPUnit\Framework\TestCase;
-use VaclavVanik\Soap\Http\Exception\ValueError;
-use VaclavVanik\Soap\Http\Request;
+use VaclavVanik\Soap\Binding\Exception\ValueError;
+use VaclavVanik\Soap\Binding\Request;
 
 use const SOAP_1_1;
 use const SOAP_1_2;

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VaclavVanikTest\Soap\Http;
+namespace VaclavVanikTest\Soap\Binding;
 
 use PHPUnit\Framework\TestCase;
 use Prophecy\PhpUnit\ProphecyTrait;
@@ -11,11 +11,11 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use SoapHeader;
 use Throwable;
-use VaclavVanik\Soap\Http\Exception\SoapFault;
-use VaclavVanik\Soap\Http\Exception\ValueError;
-use VaclavVanik\Soap\Http\InterpreterHttpBinding;
-use VaclavVanik\Soap\Http\Request;
-use VaclavVanik\Soap\Http\RequestFactory;
+use VaclavVanik\Soap\Binding\Exception\SoapFault;
+use VaclavVanik\Soap\Binding\Exception\ValueError;
+use VaclavVanik\Soap\Binding\InterpreterHttpBinding;
+use VaclavVanik\Soap\Binding\Request;
+use VaclavVanik\Soap\Binding\RequestFactory;
 use VaclavVanik\Soap\Interpreter;
 
 use const SOAP_1_1;

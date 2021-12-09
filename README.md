@@ -30,8 +30,8 @@ declare(strict_types=1);
 use Laminas\Diactoros\RequestFactory;
 use Laminas\Diactoros\Request\Serializer;
 use Laminas\Diactoros\StreamFactory;
-use VaclavVanik\Soap\Http\InterpreterHttpBinding;
-use VaclavVanik\Soap\Http\PsrRequestFactory;
+use VaclavVanik\Soap\Binding\InterpreterHttpBinding;
+use VaclavVanik\Soap\Binding\PsrRequestFactory;
 use VaclavVanik\Soap\Interpreter\PhpInterpreter;
 
 $factory = new PsrRequestFactory(new RequestFactory(), new StreamFactory());

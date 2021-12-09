@@ -10,7 +10,7 @@
         </include>
     </coverage>
     <testsuites>
-        <testsuite name="vaclavvanik/soap-http">
+        <testsuite name="vaclavvanik/soap-binding">
             <directory>../../test/</directory>
         </testsuite>
     </testsuites>

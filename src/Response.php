@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VaclavVanik\Soap\Http;
+namespace VaclavVanik\Soap\Binding;
 
 use SoapHeader;
 

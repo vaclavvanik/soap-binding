@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VaclavVanik\Soap\Http\Exception;
+namespace VaclavVanik\Soap\Binding\Exception;
 
 use SoapFault as PhpSoapFault;
 

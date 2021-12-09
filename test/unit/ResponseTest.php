@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace VaclavVanikTest\Soap\Http;
+namespace VaclavVanikTest\Soap\Binding;
 
 use PHPUnit\Framework\TestCase;
-use VaclavVanik\Soap\Http\Response;
+use VaclavVanik\Soap\Binding\Response;
 
 final class ResponseTest extends TestCase
 {

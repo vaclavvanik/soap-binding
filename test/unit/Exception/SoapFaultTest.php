@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace VaclavVanikTest\Soap\Http\Exception;
+namespace VaclavVanikTest\Soap\Binding\Exception;
 
 use PHPUnit\Framework\TestCase;
-use VaclavVanik\Soap\Http\Exception\SoapFault;
+use VaclavVanik\Soap\Binding\Exception\SoapFault;
 
 final class SoapFaultTest extends TestCase
 {

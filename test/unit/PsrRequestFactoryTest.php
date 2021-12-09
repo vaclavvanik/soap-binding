@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace VaclavVanikTest\Soap\Http;
+namespace VaclavVanikTest\Soap\Binding;
 
 use Laminas\Diactoros\RequestFactory;
 use Laminas\Diactoros\StreamFactory;
 use PHPUnit\Framework\TestCase;
-use VaclavVanik\Soap\Http\PsrRequestFactory;
-use VaclavVanik\Soap\Http\Request;
+use VaclavVanik\Soap\Binding\PsrRequestFactory;
+use VaclavVanik\Soap\Binding\Request;
 
 use const SOAP_1_1;
 use const SOAP_1_2;

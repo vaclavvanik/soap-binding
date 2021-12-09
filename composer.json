@@ -1,9 +1,9 @@
 {
-  "name": "vaclavvanik/soap-http",
+  "name": "vaclavvanik/soap-binding",
   "description": "Binding SOAP messages to PSR-7 HTTP messages",
   "license": "MIT",
   "type": "library",
-  "homepage": "https://github.com/vaclavvanik/soap-http",
+  "homepage": "https://github.com/vaclavvanik/soap-binding",
   "keywords": [
     "soap",
     "wsdl",
@@ -31,17 +31,17 @@
   },
   "autoload": {
     "psr-4": {
-      "VaclavVanik\\Soap\\Http\\": "src/"
+      "VaclavVanik\\Soap\\Binding\\": "src/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "VaclavVanikTest\\Soap\\Http\\": "test/unit"
+      "VaclavVanikTest\\Soap\\Binding\\": "test/unit"
     }
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "0.1.x-dev"
+      "dev-master": "0.2.x-dev"
     }
   }
 }
