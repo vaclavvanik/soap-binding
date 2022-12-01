@@ -13,7 +13,7 @@ interface Binding
      * @param array<mixed, mixed>    $parameters
      * @param array<int, SoapHeader> $soapHeaders
 
-     * @throws Exception\SoapFault
+     * @throws Exception\FaultRequest
      * @throws Exception\ValueError
      */
     public function request(
@@ -23,7 +23,7 @@ interface Binding
     ): Message\RequestInterface;
 
     /**
-     * @throws Exception\SoapFault
+     * @throws Exception\FaultResponse
      * @throws Exception\ValueError
      */
     public function response(string $operation, Message\ResponseInterface $response): Response;

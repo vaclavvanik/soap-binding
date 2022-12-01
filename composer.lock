@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12d1db0ee0ae6e71985e4bd415ae762e",
+    "content-hash": "1700a4bd84e94f28bc34fbdf60cb8d56",
     "packages": [
         {
             "name": "psr/http-factory",
@@ -116,16 +116,16 @@
         },
         {
             "name": "vaclavvanik/soap-interpreter",
-            "version": "0.2.0",
+            "version": "0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vaclavvanik/soap-interpreter.git",
-                "reference": "a1efff966fe26b920dd40fe84c840ec0eb02d1bf"
+                "reference": "c1d9d324f6fc30f546f2468bda248752953b11b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vaclavvanik/soap-interpreter/zipball/a1efff966fe26b920dd40fe84c840ec0eb02d1bf",
-                "reference": "a1efff966fe26b920dd40fe84c840ec0eb02d1bf",
+                "url": "https://api.github.com/repos/vaclavvanik/soap-interpreter/zipball/c1d9d324f6fc30f546f2468bda248752953b11b7",
+                "reference": "c1d9d324f6fc30f546f2468bda248752953b11b7",
                 "shasum": ""
             },
             "require": {
@@ -135,7 +135,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.2.x-dev"
+                    "dev-master": "0.4.x-dev"
                 }
             },
             "autoload": {
@@ -163,9 +163,9 @@
             ],
             "support": {
                 "issues": "https://github.com/vaclavvanik/soap-interpreter/issues",
-                "source": "https://github.com/vaclavvanik/soap-interpreter/tree/0.2.0"
+                "source": "https://github.com/vaclavvanik/soap-interpreter/tree/0.4.0"
             },
-            "time": "2021-12-08T12:53:36+00:00"
+            "time": "2022-12-01T14:41:24+00:00"
         }
     ],
     "packages-dev": [],
@@ -179,5 +179,5 @@
         "ext-soap": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }

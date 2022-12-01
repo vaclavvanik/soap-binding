@@ -86,7 +86,8 @@ stdClass Object
 
 ## Exceptions
 
-- [Exception\SoapFault](src/Exception/SoapFault.php) if soap fault thrown.
+- [Exception\FaultRequest](src/Exception/FaultRequest.php) if error thrown during processing request.
+- [Exception\FaultResponse](src/Exception/FaultResponse.php) if error thrown during processing response.
 - [Exception\ValueError](src/Exception/ValueError.php) if required argument is incorrect.
 
 ## Run check - coding standards and php-unit

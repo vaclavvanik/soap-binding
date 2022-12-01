@@ -24,10 +24,7 @@
     "ext-soap": "*",
     "psr/http-factory": "^1.0.1",
     "psr/http-message": "^1.0.0",
-    "vaclavvanik/soap-interpreter": "^0.2.0"
-  },
-  "require-dev": {
-
+    "vaclavvanik/soap-interpreter": "^0.4.0"
   },
   "autoload": {
     "psr-4": {

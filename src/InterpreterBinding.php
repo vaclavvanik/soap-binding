@@ -39,7 +39,7 @@ final class InterpreterBinding implements Binding
 
             return $this->requestFactory->createPsrRequest($soapRequest);
         } catch (Interpreter\Exception\SoapFault $e) {
-            throw Exception\SoapFault::fromSoapFault($e);
+            throw Exception\FaultRequest::fromRequest($e, $operation, $parameters, $soapHeaders);
         } catch (Interpreter\Exception\ValueError $e) {
             throw new Exception\ValueError($e->getMessage(), $e->getCode(), $e);
         }
@@ -52,7 +52,7 @@ final class InterpreterBinding implements Binding
 
             return new Response($response->getResult(), $response->getHeaders());
         } catch (Interpreter\Exception\SoapFault $e) {
-            throw Exception\SoapFault::fromSoapFault($e);
+            throw Exception\FaultResponse::fromResponse($e, $operation, $response);
         } catch (Interpreter\Exception\ValueError $e) {
             throw new Exception\ValueError($e->getMessage(), $e->getCode(), $e);
         }

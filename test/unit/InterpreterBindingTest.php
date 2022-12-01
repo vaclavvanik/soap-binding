@@ -11,7 +11,8 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use SoapHeader;
 use Throwable;
-use VaclavVanik\Soap\Binding\Exception\SoapFault;
+use VaclavVanik\Soap\Binding\Exception\FaultRequest;
+use VaclavVanik\Soap\Binding\Exception\FaultResponse;
 use VaclavVanik\Soap\Binding\Exception\ValueError;
 use VaclavVanik\Soap\Binding\InterpreterBinding;
 use VaclavVanik\Soap\Binding\Request;
@@ -109,10 +110,10 @@ final class InterpreterBindingTest extends TestCase
         /** @var RequestFactory|ObjectProphecy $requestFactory */
         $requestFactory = $this->prophesizeRequestFactory()->reveal();
 
-        yield SoapFault::class => [
+        yield FaultRequest::class => [
             new InterpreterBinding($soapFaultInterpreter, $requestFactory),
             $operation,
-            SoapFault::class,
+            FaultRequest::class,
         ];
 
         yield ValueError::class => [
@@ -163,11 +164,11 @@ final class InterpreterBindingTest extends TestCase
         /** @var RequestFactory|ObjectProphecy $requestFactory */
         $requestFactory = $this->prophesizeRequestFactory()->reveal();
 
-        yield SoapFault::class => [
+        yield FaultResponse::class => [
             new InterpreterBinding($soapFaultInterpreter, $requestFactory),
             $operation,
             $response,
-            SoapFault::class,
+            FaultResponse::class,
         ];
 
         yield ValueError::class => [
